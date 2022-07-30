@@ -129,7 +129,9 @@ Global options (use these before the subcommand, if any):
 <h4>terraform init</h4>
 
 
-* This command is needed to be executed to initialize the terraform *.tf file in the current directory
+* This command is requiredto be executed to initialize the terraform file in the current directory
+
+
 * No other command will work as this command installs:
 	* Terraform modules
 	* Backend files 
@@ -139,10 +141,132 @@ Global options (use these before the subcommand, if any):
 
 ```
 $ terraform init
+
+Initializing the backend...
+
+Initializing provider plugins...
+
+Partner and community providers are signed by their developers.
+If you'd like to know more about provider signing, you can read about it here:
+https://www.terraform.io/docs/cli/plugins/signing.html
+
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
 ``` 
 
 
-<h4>terraform init</h4>
+<h4>terraform validate</h4>
+
+* This command is used to validate/check the syntax of the Terraform files. A syntax check is done on all terraform files in the directory.
+
+
+```
+$ terraform validate
+
+Success! The configuration is valid.
+
+``` 
+
+
+
+<h4>terraform plan</h4>
+
+* This command is not required but heavily recommended to see a plan of what will get executed as a test before applying to "PROD"
+
+```
+$ terraform plan
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+*List of infrastrure chages*
+
+
+Plan: 30 to add, 0 to change, 0 to destroy.
+``` 
+
+* It is recommended but optional to export your plan using the -out flag to make sure the plan is executed without any change. 
+
+```
+$ terraform plan -out file.out
+
+Saved the plan to: file.out
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "file.out
+``` 
+
+<h4>terraform apply</h4>
+
+* This command is the final command to execute the plan and build out all terraform modules to build the infrastructure.
+
+
+```
+$ terraform apply
+
+
+``` 
+
+* You can target a specific module to apply using the -target flag
+
+```
+$ terraform apply -target=file.tf
+
+```
+
+* You can auto approve the confirmation prompt with the -auto-approve flag
+
+```
+$ terraform apply -auto-approve
+
+```
+
+
+<h4>terraform destroy</h4>
+
+* This command is used to stop and destroy current plan execution
+
+
+```
+$ terraform destroy
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: (Type yes or no)
+  
+  
+  
+  
+  Destroy complete! Resources: XX destroyed.
+
+``` 
+
+
+<h4>terraform show</h4>
+
+* This command is used to show current configuration running
+
+
+```
+$ terraform show
+
+*Shows current configuration running*
+``` 
+
 
 
 <h4>terraform providers</h4>
@@ -161,3 +285,44 @@ Providers required by configuration:
 ``` 
 
 
+<h4>terraform workspace</h4>
+
+* This command allows infrastructure environmnet management by using the workspace command
+	* Makes it easier than having to create new copies of the directories
+
+* create workspace using workspace new <name>
+
+
+```
+$ terraform workspace new dev
+
+Created and switched to workspace "dev"!
+
+You're now on a new, empty workspace. Workspaces isolate their state,
+so if you run "terraform plan" Terraform will not see any existing state
+for this configuration.
+
+``` 
+
+* List all workspaces using workspace list
+
+
+```
+$ terraform workspace list
+  default
+* dev
+
+
+``` 
+
+
+
+* Select workspace/environment after running previous command
+
+
+```
+$ terraform workspace select default
+Switched to workspace "default".
+
+
+``` 
