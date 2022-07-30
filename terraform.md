@@ -16,22 +16,37 @@
 
 <h4>Chocolatey on Windows</h4>
 
-* First, install the HashiCorp tap, a repository of all our Homebrew packages.
+* <a href="https://chocolatey.org">Chocolatey</a> is a free and open-source package management system for Windows. Install the Terraform package from the command-line.
 
 
 ```
-$ brew tap hashicorp/tap
+$ choco install terraform
+``` 
+
+* Verify the installation using the --version flag or version command	
+
+```
+$ terraform version
+Terraform vX.X.X
+on OS_Architecture
 ``` 
 
 
 <h4>Homebrew on macOS X (X64/arm64)</h4>
 
 
-* First, install the HashiCorp tap, a repository of all our Homebrew packages.
-
+* <a href="https://brew.sh">Homebrew</a> is a free and open-source package management system for macOS. Install the Terraform package from the command-line.
 
 ```
-$ brew tap hashicorp/tap
+$ brew install terraform 
+``` 
+
+* Second, verify the installation using the --version flag or version command	
+
+```
+$ terraform version
+Terraform vX.X.X
+on OS_Architecture
 ``` 
 
 
@@ -58,6 +73,10 @@ $ terraform version
 Terraform vX.X.X
 on OS_Architecture
 ``` 
+
+<center><h2>Usage<h2></center>
+
+<h4>Help</h4>
 
 * View all commands using terraform --help
 
@@ -106,4 +125,39 @@ Global options (use these before the subcommand, if any):
 
 ```
 
-<center><h2>Usage<h2></center>
+
+<h4>terraform init</h4>
+
+
+* This command is needed to be executed to initialize the terraform *.tf file in the current directory
+* No other command will work as this command installs:
+	* Terraform modules
+	* Backend files 
+	* Provider(s) plugins
+
+
+
+```
+$ terraform init
+``` 
+
+
+<h4>terraform init</h4>
+
+
+<h4>terraform providers</h4>
+
+
+* This command shows you the list of providers required in current configuration
+
+
+```
+$ terraform providers
+
+Providers required by configuration:
+.
+└── provider[registry.terraform.io/hashicorp/XXXXXXX]
+
+``` 
+
+
