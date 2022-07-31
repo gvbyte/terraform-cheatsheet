@@ -9,7 +9,7 @@
   - [Chocolatey on Windows](#windows-install)
   - [Homebrew on macOS X (X64/arm64](#macos-install)
   - [Linux - Ubuntu/Debian](#linux-install)
-- [Usage & Commands](#centerusage--commands)
+- [Usage & Commands](#usage-commands)
   - [terraform help](#terraform-help)
   - [terraform init](#terraform-init)
   - [terraform plan](#terraform-plan)
@@ -18,7 +18,7 @@
   - [terraform show](#terraform-show)
   - [terraform providers](#terraform-providers)
   - [terraform workspace](#terraform-workspace)
-- [Integrations](#centerintegrations)
+- [Integrations](#integrations)
   - [signalfx](#signalfx)
 
 ## <center><a name="about" ></a>About Terraform CLI (Command Line Interface)
