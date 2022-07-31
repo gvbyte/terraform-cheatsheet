@@ -1,6 +1,31 @@
 <center><h1>terraform.tf</center>
 
-<center><h2>About Terraform CLI (Command Line Interface)</h2></center>
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [<center><a name="about" ></a>About Terraform CLI (Command Line Interface)](#centerabout-terraform-cli-command-line-interface)
+  - [<a name="workflow" ></a>Basic Terraform IaC Workflow](#basic-terraform-iac-workflow)
+- [<center><a name="installation" ></a>Installation](#centerinstallation)
+    - [<a name="windows-install" ></a>Chocolatey on Windows](#chocolatey-on-windows)
+    - [<a name="macos-install" ></a>Homebrew on macOS X (X64/arm64)](#homebrew-on-macos-x-x64arm64)
+    - [<a name="linux-install" ></a>Linux - Ubuntu/Debian](#linux---ubuntudebian)
+- [<center><a name="usage-commands" ></a>Usage & Commands](#centerusage--commands)
+    - [<a name="terraform-help" ></a>terraform help](#terraform-help)
+    - [<a name="terraform-init" ></a>terraform init](#terraform-init)
+    - [<a name="terraform-plan" ></a>terraform plan](#terraform-plan)
+    - [<a name="terraform-apply" ></a>terraform apply](#terraform-apply)
+    - [<a name="terraform-destroy" ></a>terraform destroy](#terraform-destroy)
+    - [<a name="terraform-show" ></a>terraform show](#terraform-show)
+    - [<a name="terraform-providers" ></a>terraform providers](#terraform-providers)
+    - [<a name="terraform-workspace" ></a>terraform workspace](#terraform-workspace)
+- [<center><a name="integrations" ></a>Integrations](#centerintegrations)
+    - [<a name="signalfx" ></a>signalfx](#signalfx)
+
+
+
+
+## <center><a name="about" ></a>About Terraform CLI (Command Line Interface)
 
 <li>Terraform, a tool created by Hashicorp in 2014, written in Go (Golang), aimed to build, change and version control your infrastructure.
 
@@ -8,13 +33,16 @@
 
 <li>This tool has a powerfull and very intuitive Command Line Interface. Leveraging 4-5 commands like GitHub to initiliaze, plan, apply, show, and destroy</li>
 <center>
-<h3>Basic Terraform IaC Workflow<h3>
+
+### <a name="workflow" ></a>Basic Terraform IaC Workflow
 
 ![terraform flow](./designs/flow.png "terraform flow")
 </center>
-<center><h2>Installation<h2></center>
 
-<h4>Chocolatey on Windows</h4>
+## <center><a name="installation" ></a>Installation
+
+
+#### <a name="windows-install" ></a>Chocolatey on Windows
 
 * <a href="https://chocolatey.org">Chocolatey</a> is a free and open-source package management system for Windows. Install the Terraform package from the command-line.
 
@@ -31,8 +59,7 @@ Terraform vX.X.X
 on OS_Architecture
 ``` 
 
-
-<h4>Homebrew on macOS X (X64/arm64)</h4>
+#### <a name="macos-install" ></a>Homebrew on macOS X (X64/arm64)
 
 
 * <a href="https://brew.sh">Homebrew</a> is a free and open-source package management system for macOS. Install the Terraform package from the command-line.
@@ -41,7 +68,7 @@ on OS_Architecture
 $ brew install terraform 
 ``` 
 
-* Second, verify the installation using the --version flag or version command	
+* Verify the installation using the --version flag or version command	
 
 ```
 $ terraform version
@@ -49,9 +76,8 @@ Terraform vX.X.X
 on OS_Architecture
 ``` 
 
+#### <a name="linux-install" ></a>Linux - Ubuntu/Debian
 
-
-<h4>Linux - Ubuntu/Debian</h4>
 
 
 * First, we will apply updates to our system to update any dependency needed for terraform, also doing you a favor :) 
@@ -73,10 +99,10 @@ $ terraform version
 Terraform vX.X.X
 on OS_Architecture
 ``` 
+## <center><a name="usage-commands" ></a>Usage & Commands
 
-<center><h2>Usage<h2></center>
 
-<h4>Help</h4>
+#### <a name="terraform-help" ></a>terraform help
 
 * View all commands using terraform --help
 
@@ -125,8 +151,7 @@ Global options (use these before the subcommand, if any):
 
 ```
 
-
-<h4>terraform init</h4>
+#### <a name="terraform-init" ></a>terraform init
 
 
 * This command is requiredto be executed to initialize the terraform file in the current directory
@@ -173,8 +198,9 @@ Success! The configuration is valid.
 ``` 
 
 
+#### <a name="terraform-plan" ></a>terraform plan
 
-<h4>terraform plan</h4>
+
 
 * This command is not required but heavily recommended to see a plan of what will get executed as a test before applying to "PROD"
 
@@ -203,7 +229,10 @@ To perform exactly these actions, run the following command to apply:
     terraform apply "file.out
 ``` 
 
-<h4>terraform apply</h4>
+
+#### <a name="terraform-apply" ></a>terraform apply
+
+
 
 * This command is the final command to execute the plan and build out all terraform modules to build the infrastructure.
 
@@ -228,8 +257,8 @@ $ terraform apply -auto-approve
 
 ```
 
+#### <a name="terraform-destroy" ></a>terraform destroy
 
-<h4>terraform destroy</h4>
 
 * This command is used to stop and destroy current plan execution
 
@@ -255,8 +284,9 @@ Do you really want to destroy all resources?
 
 ``` 
 
+#### <a name="terraform-show" ></a>terraform show
 
-<h4>terraform show</h4>
+
 
 * This command is used to show current configuration running
 
@@ -268,8 +298,7 @@ $ terraform show
 ``` 
 
 
-
-<h4>terraform providers</h4>
+#### <a name="terraform-providers" ></a>terraform providers
 
 
 * This command shows you the list of providers required in current configuration
@@ -284,7 +313,7 @@ Providers required by configuration:
 
 ``` 
 
-
+#### <a name="terraform-workspace" ></a>terraform workspace
 <h4>terraform workspace</h4>
 
 * This command allows infrastructure environmnet management by using the workspace command
@@ -326,3 +355,8 @@ Switched to workspace "default".
 
 
 ``` 
+
+
+## <center><a name="integrations" ></a>Integrations
+
+#### <a name="signalfx" ></a>[signalfx](integrations/signalfx.md)

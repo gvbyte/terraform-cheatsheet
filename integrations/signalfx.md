@@ -1,33 +1,5 @@
 <center><h1> Signalfx </center>
 
-<center><h2>About Terraform CLI (Command Line Interface)</h2></center>
-
-<li>Terraform, a tool created by Hashicorp in 2014, written in Go (Golang), aimed to build, change and version control your infrastructure.
-
-<li>This concept adapted the process of Infrastructure as Code (IaC), a process of managing and provisioning computer data through machine-readable files which can be version controlled and reused.
-
-<li>This tool has a powerfull and very intuitive Command Line Interface. Leveraging 4-5 commands like GitHub to initiliaze, plan, apply, show, and destroy</li>
-
-
-
-<center><h2>Installation<h2></center>
-
-<h3>Windows</h3>
-
-<h3>macOS</h3>
-
-<h3>Linux</h3>
-
-<center><h2>Usage<h2></center>
-
-<h2>Signalfx<h2>
-
-<h4>Infrastructure as Code (IaC) is the process of managing and provisioning computer data through machine-readable files which can be version controlled and reused.<h4>
-<br><br>
-<br>
-Terraform
-<br>
-                Infrastructure as Code (IaC) is the process of managing and provisioning computer data through machine-readable files which can be version controlled and reused.
 <br>
 SignalFX
 <br>
