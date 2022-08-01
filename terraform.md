@@ -144,7 +144,7 @@ Global options (use these before the subcommand, if any):
 
 #### <a name="terraform-init" ></a>terraform init
 
-- This command is requiredto be executed to initialize the terraform file in the current directory
+- This command is required to be executed first to initialize the terraform file in the current directory
 
 - No other command will work as this command installs:
   - Terraform modules
